@@ -1,4 +1,3 @@
-// Task.tsx
 import React from "react";
 
 interface Task {
@@ -14,15 +13,10 @@ interface Phase {
 
 interface Props {
   phases: Phase[];
-  handleTaskCompletion: (taskId: number) => void;
-  handleTaskReopen: (taskId: number) => void;
+  handleTaskUpdate: (taskId: number, isCompleted: boolean) => void;
 }
 
-export const TaskList: React.FC<Props> = ({
-  phases,
-  handleTaskCompletion,
-  handleTaskReopen
-}) => {
+export const TaskList: React.FC<Props> = ({ phases, handleTaskUpdate }) => {
   return (
     <>
       {phases.map((phase, phaseIndex) => (
@@ -51,11 +45,7 @@ export const TaskList: React.FC<Props> = ({
                   value={task.id}
                   name={task.name}
                   className="form-control task-checkbox"
-                  onChange={() =>
-                    task.isCompleted
-                      ? handleTaskReopen(task.id)
-                      : handleTaskCompletion(task.id)
-                  }
+                  onChange={() => handleTaskUpdate(task.id, !task.isCompleted)}
                 />
                 <p className="task-name">{task.name}</p>
               </li>
