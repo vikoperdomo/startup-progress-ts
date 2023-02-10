@@ -1,0 +1,63 @@
+.app-header {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+}
+
+.app-title {
+  margin: 0;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.phase-number {
+  background: black;
+  color: #fff;
+  padding: 5px;
+  border-radius: 50%;
+  margin: 0 5px;
+  font-size: 12px;
+}
+
+h2 {
+  font-size: 24px;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+}
+
+p {
+  margin: 0;
+}
+
+span {
+  margin-left: 10px;
+  animation: check-animation 1s ease-in-out;
+}
+
+.animate-text {
+  animation: check-animation 1s ease-in-out;
+}
+
+@keyframes check-animation {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
